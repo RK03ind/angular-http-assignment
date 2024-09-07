@@ -1,12 +1,18 @@
 <div class="container">
   <h1>Image Gallery</h1>
+  <h2>
+    API used:
+    <a href="http://https://jsonplaceholder.typicode.com/photos"
+      >https://jsonplaceholder.typicode.com/photos</a
+    >
+  </h2>
 
   <div *ngIf="errorMsg" class="error-message">
     <p>Error: {{ errorMsg }}</p>
   </div>
 
   <div *ngIf="!errorMsg" class="gallery">
-    <div *ngFor="let post of posts" class="card">
+    <div *ngFor="let post of pagedItems" class="card">
       <img
         src="{{ post.thumbnailUrl }}"
         alt="{{ post.title }}"
@@ -16,5 +22,30 @@
         <h3>{{ post.title }}</h3>
       </div>
     </div>
+  </div>
+
+  <div *ngIf="pagedItems.length > 0" class="pagination">
+    <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
+      &laquo; Previous
+    </button>
+    <span>Page {{ currentPage }} of {{ getTotalPages() }}</span>
+    <button
+      (click)="goToPage(currentPage + 1)"
+      [disabled]="currentPage === getTotalPages()"
+    >
+      Next &raquo;
+    </button>
+  </div>
+
+  <div class="note">
+    <span>In Page {{ currentPage }}</span>
+    <span>Scroll to use pagination</span>
+  </div>
+
+  <div class="scroll-to-pagination-container" #pagination>
+    <div class="scroll-note">Scroll to Pagination</div>
+    <button class="scroll-to-pagination" (click)="scrollToPagination()">
+      ⇓
+    </button>
   </div>
 </div>
