@@ -1,7 +1,9 @@
 .container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -13,6 +15,9 @@ h2 {
   text-align: center;
   color: #333;
   margin-bottom: 3rem;
+  max-width: 75vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .error-message {
@@ -98,6 +103,7 @@ h2 {
   margin: 0 0.8rem;
 }
 
+/* Bottom Right Note */
 .note {
   position: absolute;
   font-weight: 700;
@@ -109,9 +115,7 @@ h2 {
   display: block;
 }
 
-/* pagination */
-/* gallery.component.css */
-/* Existing styles... */
+/* Scroll to pagination button */
 
 .scroll-to-pagination-container {
   position: fixed;
@@ -120,6 +124,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: opacity 0.4s;
 }
 
 .scroll-note {
@@ -155,10 +160,21 @@ h2 {
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, box-shadow 0.3s;
-  position: relative; /* Ensure that the note is positioned relative to this button */
+  position: relative;
 }
 
 .scroll-to-pagination:hover {
   background-color: #0056b3;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-pagination-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .note {
+    display: none;
+  }
 }

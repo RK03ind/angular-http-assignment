@@ -42,7 +42,11 @@
     <span>Scroll to use pagination</span>
   </div>
 
-  <div class="scroll-to-pagination-container" #pagination>
+  <div
+    class="scroll-to-pagination-container"
+    #pagination
+    [ngClass]="{ hidden: !isButtonVisible }"
+  >
     <div class="scroll-note">Scroll to Pagination</div>
     <button class="scroll-to-pagination" (click)="scrollToPagination()">
       ⇓

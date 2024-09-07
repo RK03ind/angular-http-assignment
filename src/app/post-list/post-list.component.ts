@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../data.service';
 
@@ -13,13 +13,22 @@ export class PostListComponent {
   public posts: any[] = [];
   public errorMsg: string = '';
 
+  public pagedItems: any[] = [];
   public currentPage: number = 1;
   public itemsPerPage: number = 12;
   public totalItems: number = 0;
 
-  public pagedItems: any[] = [];
+  isButtonVisible: boolean = true;
 
   @ViewChild('pagination', { static: false }) paginationElement!: ElementRef;
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    this.isButtonVisible = scrollPosition + windowHeight < documentHeight - 100;
+  }
 
   constructor(private dataService: DataService) {}
 
@@ -44,6 +53,10 @@ export class PostListComponent {
     if (page > 0 && page <= this.getTotalPages()) {
       this.currentPage = page;
       this.updatePagedItems();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     }
   }
 
