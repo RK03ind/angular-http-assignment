@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div *ngIf="pagedItems.length > 0" class="pagination">
+  <div *ngIf="pagedItems.length > 0" class="pagination" #pagination>
     <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
       &laquo; Previous
     </button>

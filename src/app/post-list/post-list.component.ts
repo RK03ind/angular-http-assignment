@@ -20,6 +20,7 @@ export class PostListComponent {
   public pagedItems: any[] = [];
 
   @ViewChild('pagination', { static: false }) paginationElement!: ElementRef;
+
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
