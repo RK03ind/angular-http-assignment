@@ -2,6 +2,8 @@
 
 This Angular application displays a paginated gallery of items and demonstrates making http requests from a 3rd party API and mapping the fetched data to components
 
+API Used: `https://jsonplaceholder.typicode.com/photos`
+
 ## Prerequisites
 
 Before you start, ensure you have the following installed:
