@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Image Gallery</h1>
+
+  <div *ngIf="errorMsg" class="error-message">
+    <p>Error: {{ errorMsg }}</p>
+  </div>
+
+  <div *ngIf="!errorMsg" class="gallery">
+    <div *ngFor="let post of posts" class="card">
+      <img
+        src="{{ post.thumbnailUrl }}"
+        alt="{{ post.title }}"
+        class="thumbnail"
+      />
+      <div class="card-body">
+        <h3>{{ post.title }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
