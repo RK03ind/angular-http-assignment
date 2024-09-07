@@ -1,27 +1,66 @@
-# AngularHttpDemo
+# AngularHttpAssignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+This Angular application displays a paginated gallery of items and demonstrates making http requests from a 3rd party API and mapping the fetched data to components
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Before you start, ensure you have the following installed:
 
-## Code scaffolding
+- Node.js (which includes npm)
+- Angular CLI (for development and build tasks)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Installing Angular CLI (if not installed)
 
-## Build
+```
+npm install -g @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+### Clone the Repository
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### (If using repo else continue from next step)
 
-## Running end-to-end tests
+```
+git clone https://github.com/RK03ind/angular-http-assignment.git
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Navigate to the Project Directory
 
-## Further help
+```
+cd angular-http-assignment
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Install Dependencies
+
+Run the following command to install the required npm packages:
+
+```
+npm install
+```
+
+## Running the Application
+
+### Serve the Application
+
+To start the development server and view the application, use:
+
+```
+ng serve
+```
+
+By default, the application will be available at http://localhost:4200.
+
+### Open the Application
+
+Open your browser and navigate to http://localhost:4200 to view the application.
+
+## Building the Application
+
+To build the application for production, use:
+
+```
+ng build --prod
+```
+
+The production build will be available in the `dist/` directory.
