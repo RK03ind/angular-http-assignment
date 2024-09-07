@@ -49,11 +49,11 @@ To start the development server and view the application, use:
 ng serve
 ```
 
-By default, the application will be available at http://localhost:4200.
+By default, the application will be available at `http://localhost:4200`.
 
 ### Open the Application
 
-Open your browser and navigate to http://localhost:4200 to view the application.
+Open your browser and navigate to `http://localhost:4200` to view the application.
 
 ## Building the Application
 
